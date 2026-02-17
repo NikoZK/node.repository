@@ -1,0 +1,9 @@
+Beers
+
+name - method - description
+/beers - GET - Return all beer resourcses
+/beers{id} - GET - Return a beer resource by id
+/beers - POST - Create a beer resource
+/beers{id} - PUT - Update a beer resource by id 
+/beers{id} - PATCH - Update a part of a beer resource by id
+/beers{id} - DELETE - Delete a beer resource by id

@@ -26,3 +26,8 @@ console.log(person)
 const people = []
 people.push("Victor") //Add to list
 console.log(people)
+
+//How to define string in JS
+//""
+//''
+//``
