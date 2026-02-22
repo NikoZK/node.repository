@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./frontpage.css"> -->
+     <style>
+        body {
+            background-color: grey;
+        }
+     </style>
+    <title>Frontpage</title>
+</head>
+<body>
+    <h1> Vitam do mojego servera</h1>
+    
+    <h3 class="frontpage-sub-title"> I hope u enjoy</h3>
+
+    <h2 id="guest-book-counter"> 0 </h2>
+
+    <button id="guest-book-button" onclick="incrementCounter()"> add yo number  </button>
+
+</body>
+<script>
+    <!-- <script src="./frontpage.css"> -->
+        const guestBookCounter = document.getElementById('guest-book-counter')
+        let guestBookCounterValue = 0
+
+        function incrementCounter() {
+            guestBookCounter.textContent = ++guestBookCounterValue
+        }
+    </script>
+</html>

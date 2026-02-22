@@ -32,6 +32,18 @@ app.get('/cars/:carModel/:year', (req, res) => {
 app.get('/bag', (req, res) => {
     res.send({data: req.query})
 })
+
+app.get("/proxy", (req, res) => {
+    /* Assignment
+    create a proxy to https://www.google.com/
+    you have all the knowlegde you need to solve this task alrady
+    */
+    fetch('http://google.com/')
+        .then(response => response.text())
+        .then((result) => {
+            res.send(result)
+        })
+        })
     
 
 app.post('/dinosaurs', (req, res) => {
