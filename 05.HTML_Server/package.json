@@ -1,5 +1,4 @@
-{
-    "scripts": {
+{    "scripts": {
     "start": "node app.js"
   },
   "dependencies": {
