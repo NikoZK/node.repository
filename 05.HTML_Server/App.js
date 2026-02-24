@@ -29,8 +29,6 @@ app.get('/', (req, res) => {
         })
 */
 
-console.log("App.js loaded");
-
 app.listen(8080, (error) => {
     if (error) {
         console.log("Error starting the server")
