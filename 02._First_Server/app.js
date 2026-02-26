@@ -20,6 +20,11 @@ app.get('/snowstorms', (req, res) => {
     res.send({warning: "SNOWSTORM INCOMMING"})
 })
 
+//backend redirect
+app.get('/forecast', (req, res) => {
+    res.redirect('/snowstorms')
+})
+
 //how can we send data in a GET request
 //{id} path variable
 
