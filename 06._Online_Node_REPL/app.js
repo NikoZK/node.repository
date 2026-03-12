@@ -6,48 +6,19 @@
     app.use(express.static('public'))
 
     // ===================== Pages =====================
+    import pagesRouter from './routers/pagesRouter.js'
 
-    app.get('/', (req, res) => {
-        res.sendFile(path.resolve('public/pages/frontend/frontend.html'))
-    })
-
-    app.get('/about', (req, res) => {
-        res.sendFile(path.resolve('public/pages/about/about.html'))
-    })
-
-    app.get('/contact', (req, res) => {
-        res.sendFile(path.resolve('public/pages/frontend/contact.html'))
-    })
+    app.use(pagesRouter)
 
     // ====================== API ======================
-    import {getOrCreateSandboxContext, executeCodeInSandbox} from './util/replUtil.js'
+    import replRouter from './routers/replRouter.js'
 
-    app.post('/api/repl', (req, res) => {
-        if (!req.body) {
-            return res.status(400).send({ errorMessage: 'Missing a JSON body'})
-        }
-        //let replCode = req.body?.replCode
-        const {replCode, sandboxId } = req.body;
+    app.use(replRouter)
 
-        if (!replCode) {
-            return res.status(400).send({ errorMessage: 'Missing the key replCode in the JSON body' })
-        }
 
-        const sandbox = getOrCreateSandboxContext(sandboxId)
-        const {error, success, output, result}  = executeCodeInSandbox(sandbox, replCode)
-        
-        if (error) {
-            return res.status(500).send({
-                data: {
-                    error
-                },
-                errorMessage: 'Error executing the code in the provided code',
-            })
-        }
 
-        res.send({ data: {success, output, result} })
-    })
 
+    // short-circuit syntax
     const PORT = process.env.PORT || 8080
 
     const server = app.listen(PORT, (error) => {

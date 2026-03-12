@@ -7,6 +7,8 @@ app.use(express.json())
 
 //one liner version = const app = require('express')();
 
+// route
+         // endpoint ('/') // callbackfunction or route handler
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
 })

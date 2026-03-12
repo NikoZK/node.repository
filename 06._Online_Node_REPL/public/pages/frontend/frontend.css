@@ -1,0 +1,26 @@
+#repl-code-output {
+    height: 60vh;
+    background-color: rgb(55, 55, 255);
+    font-family: 'monospace';
+    font-size: 16px;
+    overflow-y: auto
+}
+
+#repl-input {
+    width: 50vw
+}
+.repl-code-prompt {
+    font-weight: bold;
+}
+
+.repl-code-error {
+    color: red
+}
+
+.repl-code-output {
+    color: lightgreen
+}
+
+.repl-code-result {
+    color: green;
+}
