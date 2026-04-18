@@ -1,3 +1,4 @@
+   import 'dotenv/config'
    import express from 'express'
    import middlewareRouter from './routers/middlewareRouter.js'
    import authRouter from './routers/authRouter.js'
@@ -12,7 +13,7 @@
     app.use(helmet())
 
     app.use(session({
-        secret: 'keyboard cat', // todo make sure to not push this
+        secret: process.env.SESSION_SECRET,
         resave: false,
         saveUninitialized: true,
         cookie: { secure: false }

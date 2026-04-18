@@ -4,6 +4,7 @@
 
     app.use(express.json())
     app.use(express.static('public'))
+    app.use(express.urlencoded())
 
     // ===================== Pages =====================
     import pagesRouter from './routers/pagesRouter.js'
@@ -12,8 +13,10 @@
 
     // ====================== API ======================
     import replRouter from './routers/replRouter.js'
-
     app.use(replRouter)
+
+    import contactRouter from './routers/contactRouter.js'
+    app.use(contactRouter)
 
 
 

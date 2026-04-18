@@ -1,5 +1,26 @@
 <script>
-    let { name, familySheep, isGirl } = $props()
+    let { name, familySheep, isGirl, onShowLove,  onEatCookie, monsterFridge = $bindable() } = $props()
+    
+    import { fridgeMessages } from "../../stores/fridgeStore.js";
+
+    let fridgeMessageInput = $state("")
+    function handleSubmitFridgeMessage() {
+        const fridgeMessageToCreate = {
+            name,
+            message: fridgeMessageInput
+        }
+        //$fridgeMessages.push(fridgeMessageToCreate)
+        //fridgeMessages.set($fridgeMessages)
+        //fridgeMessageInput = ""
+
+        fridgeMessages.update((fridgeMessageStoreValue) => {
+            fridgeMessageStoreValue.push(fridgeMessageToCreate)
+            return fridgeMessageStoreValue
+        })
+
+        fridgeMessageInput = ""
+    }
+
 </script>
 
 <div class={familySheep || "not-a-sheep"}
@@ -8,6 +29,14 @@ class:is-boy={!isGirl}
 >
 <h3>I am just a child(KEEP AWAY FROM MAMO AT ALL COSTS) known as: {name}</h3>
 </div>
+
+<button onclick={() => onShowLove(name)}> Show Love😍 </button>
+<button onclick={onEatCookie}> Eat cookie </button>
+<button onclick={() => monsterFridge.pop()}> Drink da monner </button>
+<br>
+<br>
+<input bind:value={fridgeMessageInput} placeholder="enter message">
+<button onclick={handleSubmitFridgeMessage}> Write on fridge</button>
 
 <style>
     div {

@@ -1,0 +1,24 @@
+{
+  "name": "node.repository",
+  "version": "1.0.0",
+  "description": "Repository til node.js valgfaget",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NikoZK/node.repository.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NikoZK/node.repository/issues"
+  },
+  "homepage": "https://github.com/NikoZK/node.repository#readme",
+  "dependencies": {
+    "sqlite": "^5.1.1",
+    "sqlite3": "^6.0.1"
+  }
+}

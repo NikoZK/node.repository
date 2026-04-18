@@ -9,8 +9,8 @@ app.use(express.json())
 
 // route
          // endpoint ('/') // callbackfunction or route handler
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html')
+app.get('/index', (req, res) => {
+    res.sendFile(__dirname + '/login.html')
 })
 
 app.get('/xss', (req, res) => {
